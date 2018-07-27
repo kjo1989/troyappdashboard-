@@ -1,0 +1,65 @@
+<div class="formcontrl">
+<div class="col-md-12">
+  <div *ngIf="isLoading" class="col loadergif">
+       <div class="d-flex justify-content-center">
+          <mat-spinner [strokeWidth]="2" [diameter]="40"></mat-spinner>
+       </div>
+  </div>
+
+ <form novalidate (ngSubmit)="submitMessages(msgform.value)" [formGroup]="msgform">
+  <div class="form-row">
+  <div class="col-md-1 pull-right"><i class="icon-msgs"></i></div>
+  <div class="col-md-9">
+  <div class="col-md-8"><label>Welcome Message</label></div>
+  <div class="col-md-10">
+    <textarea class="form-control" formControlName="welcomeMessage" placeholder="Enter welcome message shown on App welcome page"></textarea>
+  </div>
+  </div>
+</div>
+  
+ <div class="form-row">
+  <div class="col-md-1"><i class="icon-msgs"></i></div>
+  <div class="col-md-9">
+  <div class="col-md-8"><label>Welcome Message Link</label></div>
+  <div class="col-md-10">
+    <input type="text" class="form-control"  formControlName="welcomeMessageLink" placeholder="Enter the link shown at the bottom of app welcome screen">
+      <span class="error" *ngIf="msgform.get('welcomeMessageLink').hasError( 'pattern') ">Please enter a valid URL.</span>
+  </div>
+  </div>
+</div>
+
+ <div class="form-row">
+  <div class="col-md-1"><i class="icon-msgs"></i></div>
+  <div class="col-md-9">
+    <div class="col-md-8">
+    <label>Rapid Installer Disclaimer</label></div>
+  <div class="col-md-10">
+    <textarea class="form-control"  formControlName="rapidInstallerDisclaimer" placeholder="Enter the disclaimer message shown at the top of Rapid Installer screen"></textarea>
+  </div>
+  </div>
+</div>
+<div class="form-row">
+  <div class="col-md-1"><i class="icon-msgs"></i></div>
+  <div class="col-md-9">
+  <div class="col-md-8"><label>Pop Up Message</label></div>
+  <div class="col-md-10">
+    <textarea class="form-control"  formControlName="popUpMessage" placeholder="Enter any popup message that should be shown"></textarea>
+  </div>
+  </div>
+</div>
+<div class="form-row">
+  <div class="col-md-1"><i class="icon-msgs"></i></div>
+  <div class="col-md-9">
+  <div class="col-md-8"><label>Video List Names</label></div>
+  <div class="col-md-10">
+    <textarea class="form-control"  formControlName="playListNames" placeholder="Enter play names for video play lists, separated by commas"></textarea>
+  </div>
+  </div>
+</div>
+<div class="form-row">
+  <div class="offset-md-1 col-md-6">
+                            <button class="btn btn-sm btn-default" [disabled]="msgform.invalid || !msgform.dirty" type="submit"> SUBMIT </button>
+                          </div>  </div>
+ </form>
+  </div>
+</div>

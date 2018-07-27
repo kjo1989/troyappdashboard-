@@ -1,0 +1,8 @@
+.row, .nomargin{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.main{
+ background-image: linear-gradient(rgb(4, 26, 37),rgb(4, 26, 37));
+    min-height: 100vh;
+}

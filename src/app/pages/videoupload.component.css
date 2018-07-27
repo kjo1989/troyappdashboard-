@@ -1,0 +1,132 @@
+.btn-default{
+    background-color: #ff751a;
+    color:white;
+   
+}
+
+.btn .btn-sm{
+ font-size: 0.8em;
+}
+
+.card{
+    background-color:rgb(4, 26, 37);
+    border-color: white;
+    margin: 15px; 
+    margin-top:5px !important;
+    padding:5px;
+    font-size:0.8em;
+}
+.form-row{
+    margin-left:10px !important;
+    margin-right: 10px !important;
+}
+label{
+    color:white;
+}
+
+.error{
+    color:red;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.parent{
+    margin-top:20px;
+}
+
+p{
+    color:black;
+    margin-bottom: 0em !important;
+}
+
+.lnk{
+      padding-left:5px;
+      padding-top:10px;
+}
+
+td .row{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+table td{
+    background-color: #DEDEDE;
+    font-size: 0.7em;
+    border-bottom: 1px solid #BEBEBE;
+    padding:10px;
+}
+table th {
+    background-color: #ADADAD;
+    font-size: 0.8em;
+    border-bottom: 1px solid #8E8E8E;
+    padding:10px;
+    padding-left:20px;
+}
+
+:host ::ng-deep .mat-paginator-container{
+min-height: 5px
+}
+
+:host ::ng-deep .mat-paginator {
+    background: rgb(4, 26, 37);
+    color:white; 
+}
+
+:host ::ng-deep mat-paginator .mat-select-value, :host ::ng-deep mat-paginator .mat-select-arrow ,
+:host ::ng-deep mat-paginator .mat-form-field-underline
+{
+   color:white;
+}
+
+:host ::ng-deep .img-ul-x-mark , :host ::ng-deep .img-ul-drag-box-msg , :host ::ng-deep .img-ul-clear{
+   /* display: none !important;*/
+}
+
+:host ::ng-deep label.img-ul-button{
+   display: none;
+}
+
+:host ::ng-deep  .img-ul-file-upload{
+    height:60px;
+}
+:host ::ng-deep .img-ul-image{
+    margin: 0px !important;
+    width: 55px !important;
+    height: 60px !important;
+}
+
+:host ::ng-deep .img-ul-file-upload{
+    padding:0px !important;
+    height: 0px !important;
+    display:none;
+}
+
+:host ::ng-deep .img-ul {
+     height: 60px !important;
+     width: 60px !important;
+}
+
+:host ::ng-deep .thumbimg .img-ul-image{
+    margin: 0px !important;
+    width: 35px !important;
+    height: 40px !important;
+}
+
+:host ::ng-deep .thumbimg .img-ul {
+     height: 40px !important;
+     width:40px !important;
+}
+
+:host ::ng-deep .img-ul-container{
+    padding:0px !important;
+}
+
+td img{
+    width:45px}
+
+:host ::ng-deep .mat-progress-spinner circle, :host ::ng-deep .mat-spinner circle {
+    stroke: #ff751a;
+}
+

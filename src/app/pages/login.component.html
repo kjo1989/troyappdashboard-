@@ -1,0 +1,35 @@
+
+<div class="">
+<div class="col-md-6 offset-md-3">
+<form novalidate (ngSubmit)="Login(loginform.value)" [formGroup]="loginform">
+  <div class="formcontrl">
+  <div class="form-row"><div class="col-md-12"><h4>Please Login</h4></div>
+  </div>  
+  <div class="form-row">
+  <div class="col-md-4"><label class="float-right">Username</label></div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" formControlName="username" placeholder="Username">
+     <span class="error" *ngIf="(loginform.get('username').dirty || loginform.get('username').touched) && loginform.get('username').hasError( 'email') ">Enter a Valid Email</span>
+      <span class="error" *ngIf="(loginform.get('username').dirty || loginform.get('username').touched) &&  loginform.get('username').hasError( 'required') ">*Required Field</span>
+  </div>
+  </div>
+ 
+ <div class="form-row">
+  <div class="col-md-4"><label class="float-right">Password</label></div>
+  <div class="col-md-6">
+    <input type="password" class="form-control"  formControlName="password" placeholder="Password">
+    <span class="error" *ngIf="(loginform.get('password').dirty || loginform.get('password').touched) && loginform.get('password').hasError( 'required') ">*Required Field</span>
+   </div>
+</div>
+
+<div class="form-row">
+  <div class="col-md-4"></div>
+  <div class="float-right col-md-6">
+       <button class="btn btn-sm btn-primary" [disabled]="loginform.invalid" type="submit"> LOGIN </button>
+</div>        
+</div>
+</div>
+</form>
+</div>
+
+</div>

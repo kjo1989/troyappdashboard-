@@ -1,0 +1,33 @@
+.header
+{
+    background-color: white;
+    padding:10px;
+    padding-left:40px;
+}
+
+.usersect{
+    background-color: #ff751a;
+    padding:10px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+:host ::ng-deep .popover{
+       top:50px !important;
+       width:180px !important;
+       color: #ff751a !important;
+       padding:10px;
+     }
+
+img{
+    width: 25px;
+    background-color: #ffff;
+    margin-left: 10px;
+}
+
+.usrnam{
+    color:white;
+    margin-left:10px;
+}

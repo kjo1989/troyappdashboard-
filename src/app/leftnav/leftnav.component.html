@@ -1,0 +1,24 @@
+<ul>
+  <li class="logo">
+    
+  </li>
+  <li (click)="navigatetoPage('fileupload')" [ngClass]="currentRoute=='fileupload'? 'active' :''">
+    <div>
+    <img src="assets/images/imgFile.png">
+    <p>File Upload</p>
+  </div>
+    
+  </li>
+  <li (click)="navigatetoPage('videoUpload')" [ngClass]="currentRoute=='videoUpload'? 'active' :''">
+    <div>
+       <img src="assets/images/imgVideo.png">
+       <p>Video Upload</p>
+    </div>   
+  </li>
+  <li (click)="navigatetoPage('messages')" [ngClass]="currentRoute=='messages'? 'active' :''">
+    <div>
+       <img src="assets/images/imgMsg.png">
+       <p>Messages</p>
+     </div>   
+  </li>
+</ul>

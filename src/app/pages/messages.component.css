@@ -1,0 +1,38 @@
+
+.formcontrl{
+    margin-top:30px;
+    background-color: #DEDEDE;
+    padding:15px;
+    font-size: 0.8em;
+    }
+
+label{
+    color:rgb(4, 26, 37);
+    font-weight: bold;
+}
+
+.error{
+    color:red;
+}
+.form-row{
+    margin-bottom: 15px;
+}
+
+.btn-default{
+    background-color: #ff751a;
+    color:white;
+    font-size: 0.8em;
+}
+
+li{
+     list-style-type:none;
+     }
+
+.form-row > .col-md-9 {
+    margin-left:-40px !important;
+    margin-top: -5px !important;
+} 
+
+:host ::ng-deep .mat-progress-spinner circle, :host ::ng-deep .mat-spinner circle {
+    stroke: #ff751a;
+}

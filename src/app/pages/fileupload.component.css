@@ -1,0 +1,119 @@
+.btn-default{
+    background-color: #ff751a;
+    color:white;
+    font-size: 0.8em;
+}
+.card{
+    background-color:rgb(4, 26, 37);
+    border-color: white;
+    margin: 15px; 
+    margin-top:5px !important;
+    padding:5px;
+    font-size:0.8em;
+}
+
+.error{
+       color: red;
+}
+
+.form-row{
+    margin-left:10px !important;
+}
+label{
+    color:white;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.parent{
+    margin-top:20px;
+}
+
+img{
+    width: 25px;
+    background-color: #ffff;
+    margin-left: 10px;
+}
+
+.usrnam{
+    color:white;
+    margin-left:10px;
+}
+
+p{
+    color:black;
+    margin-bottom: 0em !important;
+}
+
+.lnk{
+      padding-left:5px;
+      padding-top:10px;
+}
+
+td .row{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+table td{
+    background-color: #DEDEDE;
+    font-size: 0.7em;
+    border-bottom: 1px solid #BEBEBE;
+    padding:10px;
+}
+table th {
+    background-color: #ADADAD;
+    font-size: 0.8em;
+    border-bottom: 1px solid #8E8E8E;
+    padding:10px;
+    padding-left:20px;
+}
+
+:host ::ng-deep .mat-paginator-container{
+min-height: 5px
+}
+
+:host ::ng-deep .mat-paginator {
+    background: rgb(4, 26, 37);
+    color:white; 
+}
+
+:host ::ng-deep mat-paginator .mat-select-value, :host ::ng-deep mat-paginator .mat-select-arrow ,
+:host ::ng-deep mat-paginator .mat-form-field-underline
+{
+   color:white;
+}
+
+:host ::ng-deep .img-ul-x-mark , :host ::ng-deep .img-ul-drag-box-msg , :host ::ng-deep .img-ul-clear{
+   /* display: none !important;*/
+}
+
+:host ::ng-deep label.img-ul-button{
+   display: none;
+}
+
+:host ::ng-deep  .img-ul-file-upload{
+    height:60px;
+}
+:host ::ng-deep .img-ul-image{
+    margin: 0px !important;
+    width: 55px !important;
+    height: 60px !important;
+}
+
+:host ::ng-deep .img-ul-file-upload{
+    padding:0px !important;
+    height: 0px !important;
+    display:none;
+}
+
+:host ::ng-deep .img-ul {
+     height: 60px !important;
+}
+
+td img{
+    width:45px;
+}
+

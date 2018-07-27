@@ -1,0 +1,23 @@
+
+.formcontrl{
+    margin-top:30px;
+    background-color: #DEDEDE;
+    padding:15px;
+    font-size: 0.8em;
+    padding:25px;
+    }
+
+label{
+    color:rgb(4, 26, 37);
+    font-weight: bold;
+    margin-right:20px;
+    margin-top:5px;
+}
+
+.form-row{
+        padding: 10px 0px 10px 0px !important;
+}
+
+.error{
+    color:red;
+}

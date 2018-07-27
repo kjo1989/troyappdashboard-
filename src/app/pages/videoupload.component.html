@@ -1,0 +1,99 @@
+<div class="container parent" style="height:305px; overflow-y:scroll">
+<table class="table table-sm">
+        <thead>
+               <tr>
+                   <th width="30%">Name</th><th width="50%">Description</th><th><i class="icon-edit"></i></th><th>  <i class="icon-bin"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let data of dummdata">
+                        <td><div class="row"><span><img src="{{data.fullImageUrl}}"></span><span class="lnk"><a href="#" (click)="$event.preventDefault(); navigatetoLink(data.videoUrl)">{{data.videoName}}</a></span></div>
+                          </td>
+                        <td><p>{{data.description}}</p>
+                          </td>
+                          <td>
+                            <a href="#" (click)="$event.preventDefault();editRecord(data.id)">Edit</a>
+                          </td>
+                            <td>
+                               <a href="#" (click)="$event.preventDefault(); deleteRecord(data.id)">Delete</a>
+                          </td>
+                          </tr>
+                    </tbody>
+ </table>
+                  
+                  </div>
+<div>
+ <mat-paginator #paginator [length]="pageData.length" (page)="pageChange($event)" [pageSize]="paginationConfig.pageSize"
+                [pageSizeOptions]="[5,10,15]" [showFirstLastButtons]="true">
+              </mat-paginator>
+              </div>
+<div class="formcontrl">
+<div class="col-md-11 card">
+   <form novalidate [formGroup]="videoform">
+   <div class="form-row">
+             <div class="col-md-10">
+             <label> ADD Video </label> </div>
+              <div class="form-group col-md-4">
+                <input type="text" class="form-control" formControlName="videoName" placeholder="Video name">
+                <span class="error" *ngIf="((videoform.get('videoName').dirty || videoform.get('videoName').touched) && videoform.get('videoName').hasError( 'required')) ">* required</span>  
+                </div>
+                  <div class="form-group col-md-4">
+                     <input type="text" class="form-control" formControlName="videoUrl" placeholder="Enter video link">
+                      <span class="error" *ngIf="videoform.get('videoUrl').hasError( 'pattern') ">Please enter a valid URL.</span>
+                      <span class="error" *ngIf="((videoform.get('videoUrl').dirty || videoform.get('videoUrl').touched) && videoform.get('videoUrl').hasError( 'required')) ">* required</span>  
+                  </div>
+                      <div class="form-group col-md-4">
+                  <select class="form-control"  formControlName="playListName">
+                  <span class="error" *ngIf="((videoform.get('playListName').dirty || videoform.get('playListName').touched) && videoform.get('playListName').hasError( 'required')) ">* required</span>  
+                  <option value="" selected>Please Select Playlist</option>
+                     <option *ngFor="let opt of playlist" value="{{opt}}">{{opt}}</option>
+                  </select>
+                </div>
+                      <div class="form-group col-md-4">
+                         <textarea class="form-control" formControlName="description" placeholder="Description"></textarea>
+                         <span class="error" *ngIf="((videoform.get('description').dirty || videoform.get('description').touched) && videoform.get('description').hasError( 'required')) ">* required</span>  
+                 
+                </div>
+                          <div class="form-group col-md-4">
+                            <div class="row">
+                             <div class="col-md-3">
+                                <image-upload [url]="url" [max]="1" [uploadedFiles]= "fullImg"
+                                 [buttonCaption]="''" [dropBoxMessage]="''"
+                                 [partName]="'file'" [withCredentials]="true" (removed)="onvideoImgRemoved($event)"
+                                 (uploadFinished)="onvideoImgUploadFinished($event)" #imgvideoUpload>
+                  </image-upload>
+                             </div>   
+                  <div class="col-md-4 align-self-end">
+                            <button class="btn btn-sm btn-primary" (click)="imgVideoUpload()">Upload video picture</button>
+                            </div>
+                            </div>
+                </div>
+                          <div class="form-group col-md-4 align-self-end">
+                              <div class="row">
+                             <div class="col-md-2 thumbimg">
+                                <image-upload [url]="url" [max]="1" [uploadedFiles]= "thumbanilImg"
+                                 [buttonCaption]="''" [dropBoxMessage]="''"
+                                 [partName]="'file'" [withCredentials]="true" (removed)="onthumbImgRemoved($event)"
+                                 (uploadFinished)="onthumbImgUploadFinished($event)" #thumbimgUpload>
+                             </image-upload>
+                             </div> 
+                              <div class="col-md-4 align-self-end">  
+                            <button class="btn btn-sm btn-primary" (click)="thumbImgUpload()">video thumbnail upload</button>
+                             </div>
+                            </div>
+                </div>
+                          <div *ngIf="!isUpdate; else updateForm" class="form-group col-md-6">
+                            <button class="btn btn-sm btn-default" (click)="submitVideoInfo(videoform.value)" [disabled]="(videoform.invalid || (!thumbnailUpload) || (!imageUploaded))" > SUBMIT </button>
+                          </div>  
+                          <ng-template #updateForm>
+                          <div class="form-group col-md-6">
+                            <button class="btn btn-sm btn-danger"  (click)="cancelUpdate()" > CANCEL </button>
+                            <button class="btn btn-sm btn-success" [disabled]="!(videoform.dirty || thumbfileInf || imgfileInf)" (click)="updateInfo(videoform.value)"> UPDATE </button>
+                          </div>
+                          </ng-template>
+
+      </div>
+  </form>
+</div>
+</div>
+

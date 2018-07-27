@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap.scss';
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.icon-cross
+{
+  content: url("./assets/images/cross.svg");
+  width:20px;
+}
+
+.thumb-image{
+   content: url("./assets/images/thumbnail.png");
+   background-repeat: no-repeat;
+   background-position: center; 
+   width:50px;
+}
+
+.icon-play
+{
+  content: url("./assets/images/play-button.svg");
+  width:20px;
+}
+
+.icon-tick{
+  content: url("./assets/images/tick.svg");
+  width:20px;
+}
+
+.icon-edit
+{ 
+  content: url("./assets/images/edit.svg");
+  width:15px;
+}
+
+.icon-msgs
+{ 
+  content: url("./assets/images/chat.svg");
+  width:20px;
+}
+
+.icon-bin
+{
+   content: url("./assets/images/bin.svg");
+   width:15px;
+}
+
+:host ::ng-deep .mat-paginator-container{
+min-height: 5px
+}
+
+:host ::ng-deep .mat-paginator {
+    background: rgb(4, 26, 37);
+    color:white; 
+}
+
+:host ::ng-deep mat-paginator .mat-select-value, :host ::ng-deep mat-paginator .mat-select-arrow ,
+:host ::ng-deep mat-paginator .mat-form-field-underline
+{
+   color:white;
+}
+ 
+ .green-snackbar {
+    min-height: 50px !important;
+    background: #449d44;
+	border-color: #398439;
+    font-size: 18px;
+    font-weight: bold;
+	padding: 10px 16px;
+	line-height: 1.33;
+    border-radius: 6px;
+}
+
+.red-snackbar {
+    min-height: 50px !important;
+    background: #d9534f;
+	border-color: #d43f3a;
+    font-size: 18px;
+    font-weight: bold;
+	padding: 10px 16px;
+	line-height: 1.33;
+    border-radius: 6px;
+}

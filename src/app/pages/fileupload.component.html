@@ -1,0 +1,78 @@
+<div class="container parent" style="height:305px; overflow-y:scroll">
+<table class="table table-sm">
+        <thead>
+               <tr>
+                   <th width="30%">Name</th><th width="40%">Description</th><th><i class="icon-edit"></i></th><th>  <i class="icon-bin"></i></th><th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let data of dummdata">
+                        <td><div class="row"><span><img src="{{data.iconPath}}"> </span><span class="lnk"><a href="#" (click)="$event.preventDefault(); navigatetoLink(data.cloudDownloadPath)" target="_blank">{{data.fileName}}</a></span></div>
+                          </td>
+                        <td><p>{{data.description}}</p>
+                          </td>
+                          <td>
+                            <a href="#" (click)="$event.preventDefault();editRecord(data.id)">Edit</a>
+                          </td>
+                            <td>
+                               <a href="#" (click)="$event.preventDefault(); deleteRecord(data.id)">Delete</a>
+                          </td>
+                                <td><i [ngClass]="data.activeLink ?'icon-tick':'icon-cross'"></i>
+                                  </td>
+                        </tr>
+                    </tbody>
+ </table>
+                  
+                  </div>
+<div>
+ <mat-paginator #paginator [length]="pageData.length" (page)="pageChange($event)" [pageSize]="paginationConfig.pageSize"
+                [pageSizeOptions]="[5,10,15]" [showFirstLastButtons]="true">
+              </mat-paginator>
+              </div>
+<div class="formcontrl">
+<div class="col-md-9 card">
+  <form novalidate  [formGroup]="fileform">
+   <div class="form-row">
+             <div class="col-md-8">
+             <label> ADD FILE </label> </div>
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" formControlName="fileName" placeholder="File name">
+                <span class="error" *ngIf="((fileform.get('fileName').dirty || fileform.get('fileName').touched) && fileform.get('fileName').hasError( 'required')) ">* required</span>  
+              </div>
+                  <div class="form-group col-md-6">
+                     <input type="text" class="form-control" formControlName="cloudDownloadPath" placeholder="Enter file link">
+                      <span class="error" *ngIf="fileform.get('cloudDownloadPath').hasError( 'pattern') ">Please enter a valid URL.</span>
+                       <span class="error" *ngIf="((fileform.get('cloudDownloadPath').dirty || fileform.get('cloudDownloadPath').touched) &&  fileform.get('cloudDownloadPath').hasError( 'required'))">* required</span>
+                    </div>
+                      <div class="form-group col-md-6">
+                         <textarea class="form-control" formControlName="description" placeholder="Description"></textarea>
+                         <span class="error" *ngIf=" ((fileform.get('description').dirty || fileform.get('description').touched) && fileform.get('description').hasError( 'required'))">* required</span>  
+                </div>
+                          <div class="form-group col-md-6">
+                            <div class="row">
+                            <div class="col-md-3">
+                             <image-upload [url]="url" [max]="1" [uploadedFiles]="images"
+                                 [buttonCaption]="''" [dropBoxMessage]="''"
+                                 [partName]="'file'" [withCredentials]="true" (removed)="onRemoved($event)"
+                                 (uploadFinished)="onUploadFinished($event)" id ="imageUpload" #imageUpload>
+                  </image-upload>
+                                </div>
+                <div class="col-md-4 align-self-end">
+                            <button class="btn btn-sm btn-primary" (click)="uploadFileImage()">Upload icon</button></div>
+                </div>
+                          </div>
+                           
+                          <div *ngIf="!isUpdate; else updateForm" class="form-group col-md-6">
+                            <button class="btn btn-sm btn-default" (click)="submitFileInfo(fileform.value)" [disabled]="(fileform.invalid || (!fileuploaded))"> SUBMIT </button>
+                          </div>  
+                          <ng-template #updateForm>
+                          <div class="form-group col-md-6">
+                            <button class="btn btn-sm btn-danger"  (click)="cancelUpdate()" > CANCEL </button>
+                            <button class="btn btn-sm btn-success" [disabled]="!(fileform.dirty || fileInf)" (click)="updateInfo(fileform.value)"> UPDATE </button>
+                          </div>
+                          </ng-template>
+
+</div>
+  </form>
+</div>
+</div>
